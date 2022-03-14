@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Calculator {
     private int num1;
     private int num2;
-    private String operator;
+    private String operator, output;
 
     // Constructor to initialize the calculator
     public Calculator() {
@@ -41,7 +41,7 @@ public class Calculator {
         }
         System.out.println(output);
    }
-    }
+   
 
     public String add(int a, int b) {
         /**
