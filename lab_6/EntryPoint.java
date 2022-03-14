@@ -7,6 +7,7 @@ public class EntryPoint {
          */
     	Scanner scan = new Scanner(System.in);
     	boolean iff = false;
+    	int use=0;
     	
     	do {
     	System.out.println("Which service would you like to use?");
@@ -14,7 +15,8 @@ public class EntryPoint {
 		System.out.println("[2]: Advanced week visualizer");
 		System.out.println("[3]: Basic calculator");
 		System.out.println("[4]: Employee repertoire");
-		int use = scan.nextInt();
+		use = scan.nextInt();
+		scan.nextLine();
 		
 		switch(use) {
 			case 1:
@@ -43,7 +45,7 @@ public class EntryPoint {
 		
 		System.out.println("Would you like to perform another operation? (y/n)");
 		String request = scan.nextLine();
-		if(request.equals('y')) {
+		if(request.equals("y")) {
 			iff = true;
 		} else {
 			iff = false;
