@@ -1,4 +1,4 @@
-import java.io.FileReader;
+import java.io.File;
 import java.io.FileWriter; // Import the FileWriter class
 import java.io.IOException; // Import the IOException class to handle errors
 import java.util.Scanner;
@@ -30,20 +30,23 @@ public class ExpensesTracker {
 
             } while (answer.equals("y"));
 
-            System.out.println("Get off of ZoodMall!");
+            fw.close();
+
             System.out.println("Would you like to read a summary of your purchases?");
             summary = scan.nextLine();
 
-            FileReader reader = new FileReader("expenses.txt");
+            Scanner reader = new Scanner(new File("expenses.txt"));
 
             if (summary.equals("y")) {
-                String data = reader.read();
-                System.out.println(data);
+                while (reader.hasNext()) {
+                    System.out.println(reader.nextLine());
+                }
 
             }
+            System.out.println("Get off of ZoodMall!");
 
             // Close ClassWriter & Scanner objects
-            fw.close();
+
             scan.close();
             reader.close();
 
